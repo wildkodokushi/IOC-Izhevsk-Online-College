@@ -1,3 +1,7 @@
+window.addEventListener('beforeunload', function() {
+    socket.close();
+});
+
 //header-burger, overlaygit 
 const themeToggle = document.getElementById('themeToggle');
 const burger = document.getElementById('burger');
