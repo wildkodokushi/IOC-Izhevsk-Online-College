@@ -3,7 +3,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 /* reset css */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,7 +45,6 @@ table {
 }
 
 /* veriables */
-
 :root {
     --font-family: "Montserrat", sans-serif;
 
@@ -74,7 +72,7 @@ table {
 
     --transition-duration: 0.3s;
 
-    --padd-x: 10px;
+    --padd-x: clamp(10px, 2.22vw, 30px);
 
     --container-width: 1350px;
 
@@ -178,7 +176,7 @@ main {
 .header__menu {
     display: flex;
     align-items: center;
-    column-gap: clamp(10px, 5.2vw, 100px);
+    column-gap: clamp(10px, 2.22vw, 30px);
 }
 .header__menu-list {
     display: flex;
@@ -203,21 +201,17 @@ main {
     width: 100%;
     opacity: 1;
 }
-.header__contact,
-.overlay__contact {
-    height: 60px;
+.header__button,
+.overlay__button {
+    height: 50px;
     border: 1px solid var(--color-black);
-    border-radius: var(--border-radius-5);
+    border-radius: var(--border-radius-30);
 }
-.header__contact:hover,
-.overlay__contact:hover {
+.header__button:hover,
+.overlay__button:hover {
     border: var(--border-none);
     color: var(--background-color-white);
     background-color: var(--background-color-accent);
-}
-.header__contact:active,
-.overlay__contact:active {
-    box-shadow: 0px 0px 20px 0px rgba(0, 50, 88, 0.56) inset;
 }
 /* header-theme */
 .theme-toggle {
@@ -333,8 +327,8 @@ main {
 }
 .info__row {
     display: flex;
-    justify-content: center;
-    column-gap: 50px;
+    justify-content: space-between;
+    column-gap: 10px;
 }
 
 /* swiper */
@@ -356,7 +350,6 @@ main {
     height: 100%;
     object-fit: cover;
     border-radius: var(--border-radius-15);
-    padding-left: 6px;
 }
 .swiper__item {
     display: inline-flex;
@@ -415,7 +408,7 @@ main {
 .info__details {
     display: flex;
     flex-direction: column;
-    row-gap: 55px;
+    row-gap: clamp(10px, 3.7vw, 50px);
 }
 .info__details-list {
     background-color: var(--background-color-light);
@@ -610,41 +603,6 @@ main {
 
 /* media */
 
-@media(max-width: 1830px) {
-    .header__menu,
-    .contacts__row {
-        column-gap: 40px;
-    } 
-    .header__menu-list {
-        column-gap: 30px;
-    }
-}
-@media(max-width: 1560px) {
-    .header {
-        height: auto;
-        padding: 10px 0 10px 0;
-    }
-    .header__row {
-        column-gap: 20px;
-    }
-    .header__menu {
-        flex-wrap: wrap;
-    }
-    .header__logo--2 {
-        display: block;
-    }
-    .header__logo--1 {
-        display: none;
-    }
-    .theme-toggle {
-        order: 1;
-    }
-}
-@media(max-width: 1507px) {
-    .header__menu .header__menu-list:nth-child(3) {
-        padding-top: 10px;
-    }
-}
 @media(max-width: 1260px) {
     .contacts {
         align-items: normal;
@@ -660,6 +618,31 @@ main {
         max-width: 100%;
     }
 }
+@media(max-width: 1086px) {
+    .header {
+        height: 100px;
+    }
+    .header__menu {
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 10px;
+    }
+    .header__menu-list {
+        column-gap: 15px;
+    }
+    .header__logo--2 {
+        display: block;
+    }
+    .header__logo--1 {
+        display: none;
+    }
+    .theme-toggle {
+        order: 1;
+    }
+    .header__button {
+        margin-left: auto;
+    } 
+}
 @media(max-width: 1030px) {
     .info__row,
     .info__details {
@@ -667,17 +650,6 @@ main {
     }
 }
 @media(max-width: 900px) {
-    .header {
-        height: 75px;
-        padding: 0;
-    }
-    .header__logo img {
-        width: 65px;
-        height: 65px;
-    }
-    .header__row {
-        column-gap: 20px;
-    }
     .theme-toggle {
         width: 40px;
         height: 40px;
@@ -686,12 +658,6 @@ main {
     .theme-toggle img {
         width: 35px;
         height: 35px;
-    }
-    .header__menu-list, .header__contact {
-        display: none;
-    }
-    .header__burger {
-        display: flex;
     }
     .info__row {
         flex-direction: column;
@@ -702,6 +668,21 @@ main {
     .info__swiper {
         max-width: 100%;
         height: 500px;
+    }
+}
+@media(max-width: 767px) {
+    .header__logo img {
+        width: 75px;
+        height: 75px;
+    }
+    .header__row {
+        column-gap: 20px;
+    }
+    .header__menu-list, .header__button {
+        display: none;
+    }
+    .header__burger {
+        display: flex;
     }
 }
 @media(max-width: 676px) {
