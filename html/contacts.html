@@ -3,54 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="shortcut icon" href="./icon/logo.svg" type="image/x-icon">
+    <title>Страница контактов IIEC</title>
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="../icon/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
     <header class="header">
         <div class="header__row">
             <a href="/" class="header__logo header__logo--2">
-                <img src="./icon/logo.svg" alt="Логотик Ипэка" title="Логотик Ипэка" loading="lazy">
+                <img src="../icon/logo.svg" alt="Логотип IIEC" title="Логотип IIEC" fetchpriority="high" loading="eager" aria-label="Логотип IIEC">
             </a>
-            <button class="theme-toggle" id="themeToggle" title="Переключить тему">
-                <img src="./icon/header/dark.svg" alt="swap-dark" class="swap-dark">
-                <img src="./icon/header/light.svg" alt="swap-light" class="swap-light">
+            <button class="theme-toggle" id="themeToggle" title="Переключить тему" aria-label="Переключить тему">
+                <img src="../icon/header/dark.svg" alt="" class="swap-dark" aria-label="Перейти в тёмный режим">
+                <img src="../icon/header/light.svg" alt="" class="swap-light" aria-label="Перейти в светлый режим">
             </button>
             <nav class="header__menu">
                 <ul class="header__menu-list">
-                    <li class="header__menu-item"><a href="./index.html">Главная</a></li>
-                    <li class="header__menu-item"><a href="https://www.pilot-ipek.ru/raspo/">Расписание</a></li>
-                    <li class="header__menu-item"><a href="https://ek.udmr.ru/auth/login-page">Электронный колледж</a></li>
+                    <li class="header__menu-item"><a href="./index.html" aria-label="Перейти на главную">Главная</a></li>
+                    <li class="header__menu-item"><a href="" aria-label="Перейти к специальностям">Специальности</a></li>
                 </ul>
                 <a href="/" class="header__logo header__logo--1">
-                    <img src="./icon/logo.svg" alt="Логотик Ипэка" title="Логотик Ипэка" loading="lazy">
+                    <img src="../icon/logo.svg" alt="Логотип IIEC" title="Логотип IIEC" fetchpriority="high" loading="eager" aria-label="Логотип IIEC">
                 </a>
                 <ul class="header__menu-list">
-                    <li class="header__menu-item"><a href="https://ciur.ru/ipek/default.aspx/">Ciur ИПЭК</a></li>
-                    <li class="header__menu-item"><a href="https://moodle.pilot-ipek.ru/">Moodle LMS</a></li>
-                    <li class="header__menu-item"><a href="https://helpdesk.pilot-ipek.ru/">Тех.поддержка</a></li>
+                    <li class="header__menu-item"><a href="" aria-label="Перейти к расписанию">Расписание</a></li>
+                    <li class="header__menu-item"><a href="" aria-label="Обратиться к тех.поддержке">Тех.поддержка</a></li>
                 </ul>
             </nav>
-            <a href="./contacts.html" class="header__contact button">
+            <a href="./html/contacts.html" class="header__button button" title="Перейти на страницу контактов" aria-label="Перейти на страницу контактов">
                 Контакты
             </a>
-            <div class="header__burger" id="burger">
+            <button class="header__burger" id="burger" title="Открыть меню" aria-label="Открыть меню">
                 <span class="header__burger-line"></span>
                 <span class="header__burger-line"></span>
                 <span class="header__burger-line"></span>
-            </div>
+            </button>
             <div class="overlay" id="overlay">
                 <div class="overlay-content">
                     <ul class="overlay-nav-list">
-                        <li class="overlay-nav-item"><a href="./index.html">Главная</a></li>
-                        <li class="overlay-nav-item"><a href="https://www.pilot-ipek.ru/raspo/">Расписание</a></li>
-                        <li class="overlay-nav-item"><a href="https://ek.udmr.ru/auth/login-page">Электронный колледж</a></li>
-                        <li class="overlay-nav-item"><a href="https://ciur.ru/ipek/default.aspx/">Ciur ИПЭК</a></li>
-                        <li class="overlay-nav-item"><a href="https://moodle.pilot-ipek.ru/">Moodle LMS</a></li>
-                        <li class="overlay-nav-item"><a href="https://helpdesk.pilot-ipek.ru/">Тех.поддержка</a></li>
+                        <li class="overlay-nav-item"><a href="./index.html" aria-label="Перейти на главную">Главная</a></li>
+                        <li class="overlay-nav-item"><a href="" aria-label="Перейти к специальностям">Специальности</a></li>
+                        <li class="overlay-nav-item"><a href="" aria-label="Перейти к расписанию">Расписание</a></li>
+                        <li class="overlay-nav-item"><a href="" aria-label="Обратиться к тех.поддержке">Тех.поддержка</a></li>
                     </ul>
-                    <a href="./contacts.html" class="overlay__contact button">
+                    <a href="./html/contacts.html" class="overlay__button button" aria-label="Перейти на страницу контактов">
                         Контакты
                     </a>
                 </div>
@@ -61,41 +58,41 @@
         <section class="contacts">
             <h1 class="contacts__tittle">Контакты</h1>
             <div class="contacts__row">
-                <ul class="info__details-list contacts__list">
-                    <li class="info__details-item contacts__list-item">
-                        <p>Адрес</p>
-                        <p>426004 г. Ижевск, Ленина, 68</p>
+                <ul class="contacts__list">
+                    <li class="contacts__list-item">
+                        <p class="contacts__item-accent">Адрес</p>
+                        <p class="contacts__item-regular">426004 г. Ижевск, Ленина, 68</p>
                     </li>
-                    <li class="info__details-item contacts__list-item">
-                        <p>E-mail</p>
-                        <p>ipek1@mail.ru</p>
+                    <li class="contacts__list-item">
+                        <p class="contacts__item-accent">E-mail</p>
+                        <p class="contacts__item-regular">ipek1@mail.ru</p>
                     </li>
-                    <li class="info__details-item contacts__list-item">
-                        <p>Приемная директора</p>
-                        <p>+7 (3412) 68-54-89</p>
+                    <li class="contacts__list-item">
+                        <p class="contacts__item-accent">Приемная директора</p>
+                        <p class="contacts__item-regular">+7 (3412) 68-54-89</p>
                     </li>
-                    <li class="info__details-item contacts__list-item">
-                        <p>Приемная комиссия</p>
-                        <span><p>+7 (3412) 68-52-04</p><p>+7 950 158 47 30</p></span>
+                    <li class="contacts__list-item">
+                        <p class="contacts__item-accent">Приемная комиссия</p>
+                        <span class="span-column"><p class="contacts__item-regular">+7 (3412) 68-52-04</p><p class="contacts__item-regular">+7 950 158 47 30</p></span>
                     </li>
-                    <li class="info__details-item contacts__list-item">
-                        <p>Проезд</p>
-                        <span><p>Трамвай № 2,3,4,5,10,12 до остановки «Банк Первомайский»</p><p>Автобус № 28, 40, 79, троллейбус № 2,4 до остановки «Дворец спорта»</p></span>
+                    <li class="contacts__list-item">
+                        <p class="contacts__item-accent">Проезд</p>
+                        <span class="span-column"><p class="contacts__item-regular">Трамвай № 2,3,4,5,10,12 до остановки «Банк Первомайский»</p><p class="contacts__item-regular">Автобус № 28, 40, 79, троллейбус № 2,4 до остановки «Дворец спорта»</p></span>
                     </li>
                 </ul>
                 <div class="contacts__map">
                     <h2 class="contacts__map-title">Схема проезда</h2>
-                    <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/44/izhevsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;"></a><a href="https://yandex.ru/maps/44/izhevsk/?from=mapframe&ll=53.228887%2C56.845598&mode=usermaps&source=mapframe&um=constructor%3Aab86f2cf9758ff78d8323637f614531320374403c5e62795b147841d5f92dae3&utm_medium=mapframe&utm_source=maps&z=16" style="color:#eee;font-size:12px;position:absolute;top:14px;"></a><iframe id="map" src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=53.228887%2C56.845598&mode=usermaps&source=mapframe&um=constructor%3Aab86f2cf9758ff78d8323637f614531320374403c5e62795b147841d5f92dae3&utm_source=mapframe&z=16" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                    <div style="position:relative; overflow:hidden;"><a href="https://yandex.ru/maps/44/izhevsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;"></a><a href="https://yandex.ru/maps/44/izhevsk/?from=mapframe&ll=53.228887%2C56.845598&mode=usermaps&source=mapframe&um=constructor%3Aab86f2cf9758ff78d8323637f614531320374403c5e62795b147841d5f92dae3&utm_medium=mapframe&utm_source=maps&z=16" style="color:#eee;font-size:12px;position:absolute;top:14px;"></a><iframe id="map" src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=53.228887%2C56.845598&mode=usermaps&source=mapframe&um=constructor%3Aab86f2cf9758ff78d8323637f614531320374403c5e62795b147841d5f92dae3&utm_source=mapframe&z=16" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
                 </div>
             </div>
         </section>
     </main>
     <footer class="footer">
         <div class="footer__row container">
-            <img src="./icon/footer/Vector.svg" alt="VK logo">
+            <img src="../icon/footer/Vector.svg" alt="VK logo">
             <p>Copyright © 2025 Ижевский промышленно-экономический колледж</p>
         </div>
     </footer>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
