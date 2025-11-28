@@ -183,24 +183,16 @@ main {
     display: flex;
     column-gap: clamp(10px, 3.12vw, 60px);
 }
-.header__menu-item a {
+.header__menu-link {
     font-weight: 500;
     position: relative;
     padding-bottom: 3px;
 }
-.header__menu-item a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    background-color: var(--color-black);
-    bottom: 0;
-    opacity: 0;
-    transition: var(--transition-duration);
+.header__menu-link:hover {
+    color: var(--color-accent);
 }
-.header__menu-item a:hover::before {
-    width: 100%;
-    opacity: 1;
+.active {
+    color: var(--color-accent);
 }
 .header__button,
 .overlay__button {
@@ -466,7 +458,6 @@ main {
     font-size: clamp(18px, 1.80vw, 22px);
 }
 .info__soc1al-button {
-    font-weight: 500;
     height: 47px;
     background-color: var(--background-color-accent);
     border-radius: var(--border-radius-23);
