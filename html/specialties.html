@@ -8,6 +8,85 @@
     <link rel="shortcut icon" href="../icon/logo.svg" type="image/x-icon">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header__row">
+            <a href="/" class="header__logo header__logo--2">
+                <img src="../icon/logo.svg" alt="Логотип IIEC" title="Логотип IIEC" fetchpriority="high" loading="eager" aria-label="Логотип IIEC">
+            </a>
+            <button class="theme-toggle" id="themeToggle" title="Переключить тему" aria-label="Переключить тему">
+                <img src="../icon/header/dark.svg" alt="" class="swap-dark" aria-label="Перейти в тёмный режим">
+                <img src="../icon/header/light.svg" alt="" class="swap-light" aria-label="Перейти в светлый режим">
+            </button>
+            <nav class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a href="./index.html" class="header__menu-link" aria-label="Перейти на главную">
+                            Главная
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="./html/specialties.html" class="header__menu-link active" aria-label="Перейти к специальностям">
+                            Специальности
+                        </a>
+                    </li>
+                </ul>
+                <a href="/" class="header__logo header__logo--1">
+                    <img src="../icon/logo.svg" alt="Логотип IIEC" title="Логотип IIEC" fetchpriority="high" loading="eager" aria-label="Логотип IIEC">
+                </a>
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a href="" class="header__menu-link" aria-label="Перейти к расписанию">
+                            Расписание
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="" class="header__menu-link" aria-label="Обратиться к тех.поддержке">
+                            Тех.поддержка
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="./html/contacts.html" class="header__button button" title="Перейти на страницу контактов" aria-label="Перейти на страницу контактов">
+                Контакты
+            </a>
+            <button class="header__burger" id="burger" title="Открыть меню" aria-label="Открыть меню">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
+            <div class="overlay" id="overlay">
+                <div class="overlay-content">
+                    <nav class="overlay__menu">
+                        <ul class="overlay__menu-list">
+                            <li class="overlay__menu-item">
+                                <a href="/" aria-label="Перейти на главную">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="overlay__menu-item">
+                                <a href="./specialties.html" aria-label="Перейти к специальностям">
+                                    Специальности
+                                </a>
+                            </li>
+                            <li class="overlay__menu-item">
+                                <a href="" aria-label="Перейти к расписанию">
+                                    Расписание
+                                </a>
+                            </li>
+                            <li class="overlay__menu-item">
+                                <a href="" aria-label="Обратиться к тех.поддержке">
+                                    Тех.поддержка
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="./html/contacts.html" class="overlay__button button" aria-label="Перейти на страницу контактов">
+                        Контакты
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="../script.js"></script>
 </body>
 </html>

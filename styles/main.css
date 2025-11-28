@@ -292,7 +292,7 @@ main {
     opacity: 1;
     visibility: visible;
 }
-.overlay-nav-item {
+.overlay__menu-item {
     margin: 1.5rem 0;
 }
 .overlay__contact {
@@ -307,6 +307,7 @@ main {
 }
 .info__title,
 .contacts__tittle {
+    padding-inline: var(--padd-x);
     text-align: center;
     font-weight: 800;
     font-size: clamp(24px, 4.44vw, 40px);
