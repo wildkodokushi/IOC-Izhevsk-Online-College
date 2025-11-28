@@ -293,7 +293,7 @@ main {
     visibility: visible;
 }
 .overlay__menu-item {
-    margin: 1.5rem 0;
+    margin: 2.5rem 0;
 }
 .overlay__contact {
     margin-top: 30px;
@@ -673,9 +673,13 @@ main {
     }
 }
 @media(max-width: 767px) {
+    .header {
+        height: auto;
+        padding: 5px 0 5px 0;
+    }
     .header__logo img {
-        width: 75px;
-        height: 75px;
+        width: 65px;
+        height: 65px;
     }
     .header__row {
         column-gap: 20px;
@@ -705,8 +709,6 @@ main {
     .contacts__map div {
         height: 250px;
     }
-}
-@media(max-width: 385px) {
     .info-description {
         text-align: start;
     }
