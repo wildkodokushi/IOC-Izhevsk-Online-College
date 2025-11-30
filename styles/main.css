@@ -580,59 +580,88 @@ main {
     border-radius: var(--border-radius-23);
     transition: var(--transition-duration);
 }
-/* .specialties__grid-item:hover {
+.specialties__grid-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(81, 205, 56, 0.1);
-} */
+}
 .first-card {
     background-color: rgba(81, 205, 56, 0.1);
     border: 2px solid rgba(81, 205, 56, 0.1);
     color: #51cd38;
+}
+.first-card:hover {
+    box-shadow: 0 0 15px rgba(81, 205, 56, 0.3);
 }
 .second-card {
     background-color: rgba(56, 195, 205, 0.1);
     border: 2px solid rgba(56, 195, 205, 0.1);
     color: #38c3cd;
 }
+.second-card:hover {
+    box-shadow: 0 0 15px rgba(56, 195, 205, 0.3);
+}
 .third-card {
     background-color: rgba(56, 205, 170, 0.1);
     border: 2px solid rgba(56, 205, 170, 0.1);
     color: #38cdaa;
+}
+.third-card:hover {
+    box-shadow: 0 0 15px rgba(56, 205, 170, 0.3);
 }
 .fourth-card {
     background-color: rgba(205, 200, 56, 0.1);
     border: 2px solid rgba(205, 200, 56, 0.1);
     color: #cdc838;
 }
+.fourth-card:hover {
+    box-shadow: 0 0 15px rgba(205, 200, 56, 0.3);
+}
 .fifth-card {
     background-color: rgba(56, 122, 205, 0.1);
     border: 2px solid rgba(56, 122, 205, 0.1);  
     color: #387acd;
+}
+.fifth-card:hover {
+    box-shadow: 0 0 15px rgba(56, 122, 205, 0.3);
 }
 .sixth-card {
     background-color: rgba(249, 173, 50, 0.1);
     border: 2px solid rgba(249, 173, 50, 0.1);
     color: #f9ad32;
 }
+.sixth-card:hover {
+    box-shadow: 0 0 15px rgba(249, 173, 50, 0.3);
+}
 .seventh-card {
     background-color: rgba(56, 63, 205, 0.1);
     border: 2px solid rgba(56, 63, 205, 0.1);
     color: #383fcd;
+}
+.seventh-card:hover {
+    box-shadow: 0 0 15px rgba(56, 63, 205, 0.3);
 }
 .eighth-card {
     background-color: rgba(99, 105, 147, 0.1);
     border: 2px solid rgba(99, 105, 147, 0.1);
     color: #636993;
 }
+.eighth-card:hover {
+    box-shadow: 0 0 15px rgba(99, 105, 147, 0.3);
+}
 .ninth-card {
     background-color: rgba(205, 56, 56, 0.1);
     border: 2px solid rgba(205, 56, 56, 0.1);
     color: #cd3838;
 }
+.ninth-card:hover {
+    box-shadow: 0 0 15px rgba(205, 56, 56, 0.3);
+}
 .tenth-card {
     background-color: rgba(128, 56, 205, 0.1);
     border: 2px solid rgba(128, 56, 205, 0.1);
     color: #8038cd;
+}
+.tenth-card:hover {
+    box-shadow: 0 0 15px rgba(128, 56, 205, 0.3);
 }
 .specialties__grid-link {
     white-space: wrap;
