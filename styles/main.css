@@ -570,8 +570,6 @@ main {
 .specialties__inner {
     padding-top: 40px;
 }
-.specialties__grid {
-}
 .specialties__grid-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -579,12 +577,62 @@ main {
 }
 .specialties__grid-item {
     max-width: 650px;
-}
-.first-card {
-    border: 2px solid rgba(81, 205, 56, 0.1);
     border-radius: var(--border-radius-23);
-    background: rgba(81, 205, 56, 0.1);
+    transition: var(--transition-duration);
+}
+/* .specialties__grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(81, 205, 56, 0.1);
+} */
+.first-card {
+    background-color: rgba(81, 205, 56, 0.1);
+    border: 2px solid rgba(81, 205, 56, 0.1);
     color: #51cd38;
+}
+.second-card {
+    background-color: rgba(56, 195, 205, 0.1);
+    border: 2px solid rgba(56, 195, 205, 0.1);
+    color: #38c3cd;
+}
+.third-card {
+    background-color: rgba(56, 205, 170, 0.1);
+    border: 2px solid rgba(56, 205, 170, 0.1);
+    color: #38cdaa;
+}
+.fourth-card {
+    background-color: rgba(205, 200, 56, 0.1);
+    border: 2px solid rgba(205, 200, 56, 0.1);
+    color: #cdc838;
+}
+.fifth-card {
+    background-color: rgba(56, 122, 205, 0.1);
+    border: 2px solid rgba(56, 122, 205, 0.1);  
+    color: #387acd;
+}
+.sixth-card {
+    background-color: rgba(249, 173, 50, 0.1);
+    border: 2px solid rgba(249, 173, 50, 0.1);
+    color: #f9ad32;
+}
+.seventh-card {
+    background-color: rgba(56, 63, 205, 0.1);
+    border: 2px solid rgba(56, 63, 205, 0.1);
+    color: #383fcd;
+}
+.eighth-card {
+    background-color: rgba(99, 105, 147, 0.1);
+    border: 2px solid rgba(99, 105, 147, 0.1);
+    color: #636993;
+}
+.ninth-card {
+    background-color: rgba(205, 56, 56, 0.1);
+    border: 2px solid rgba(205, 56, 56, 0.1);
+    color: #cd3838;
+}
+.tenth-card {
+    background-color: rgba(128, 56, 205, 0.1);
+    border: 2px solid rgba(128, 56, 205, 0.1);
+    color: #8038cd;
 }
 .specialties__grid-link {
     white-space: wrap;
@@ -619,6 +667,7 @@ main {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: var(--border-radius-100);
+    flex-shrink: 0;
 }
 .specialties__card-subtitle {
     max-width: 566px;
@@ -633,7 +682,6 @@ main {
     color: rgba(0, 0, 0, 0.5);
     line-height: 120%;
 }
-
 
 /* media */
 
