@@ -439,6 +439,8 @@ main {
 /* section-2 advantages */
 
 .advantages {
+    background-color: var(--background-color-light);
+    padding-block: 50px;
     margin-top: 130px;
 }
 .advantages__inner {
@@ -566,7 +568,9 @@ main {
 }
 .specialties__title {
     font-weight: 800;
-    font-size: 40px;
+    padding-inline: var(--padd-x);
+    line-height: 125%;
+    font-size: clamp(24px, 4.44vw, 40px);
     text-align: center;
 }
 .specialties__inner {
@@ -575,95 +579,62 @@ main {
 .specialties__grid-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: clamp(10px, 2.25vw, 30px);
 }
 .specialties__grid-item {
     max-width: 650px;
     border-radius: var(--border-radius-23);
     transition: var(--transition-duration);
 }
-.specialties__grid-item:hover {
-    transform: scale(1.05);
-}
 .first-card {
     background-color: rgba(81, 205, 56, 0.1);
     border: 2px solid rgba(81, 205, 56, 0.1);
     color: #51cd38;
-}
-.first-card:hover {
-    box-shadow: 0 0 15px rgba(81, 205, 56, 0.3);
 }
 .second-card {
     background-color: rgba(56, 195, 205, 0.1);
     border: 2px solid rgba(56, 195, 205, 0.1);
     color: #38c3cd;
 }
-.second-card:hover {
-    box-shadow: 0 0 15px rgba(56, 195, 205, 0.3);
-}
 .third-card {
     background-color: rgba(56, 205, 170, 0.1);
     border: 2px solid rgba(56, 205, 170, 0.1);
     color: #38cdaa;
-}
-.third-card:hover {
-    box-shadow: 0 0 15px rgba(56, 205, 170, 0.3);
 }
 .fourth-card {
     background-color: rgba(205, 200, 56, 0.1);
     border: 2px solid rgba(205, 200, 56, 0.1);
     color: #cdc838;
 }
-.fourth-card:hover {
-    box-shadow: 0 0 15px rgba(205, 200, 56, 0.3);
-}
 .fifth-card {
     background-color: rgba(56, 122, 205, 0.1);
     border: 2px solid rgba(56, 122, 205, 0.1);  
     color: #387acd;
-}
-.fifth-card:hover {
-    box-shadow: 0 0 15px rgba(56, 122, 205, 0.3);
 }
 .sixth-card {
     background-color: rgba(249, 173, 50, 0.1);
     border: 2px solid rgba(249, 173, 50, 0.1);
     color: #f9ad32;
 }
-.sixth-card:hover {
-    box-shadow: 0 0 15px rgba(249, 173, 50, 0.3);
-}
 .seventh-card {
     background-color: rgba(56, 63, 205, 0.1);
     border: 2px solid rgba(56, 63, 205, 0.1);
     color: #383fcd;
-}
-.seventh-card:hover {
-    box-shadow: 0 0 15px rgba(56, 63, 205, 0.3);
 }
 .eighth-card {
     background-color: rgba(99, 105, 147, 0.1);
     border: 2px solid rgba(99, 105, 147, 0.1);
     color: #636993;
 }
-.eighth-card:hover {
-    box-shadow: 0 0 15px rgba(99, 105, 147, 0.3);
-}
 .ninth-card {
     background-color: rgba(205, 56, 56, 0.1);
     border: 2px solid rgba(205, 56, 56, 0.1);
     color: #cd3838;
 }
-.ninth-card:hover {
-    box-shadow: 0 0 15px rgba(205, 56, 56, 0.3);
-}
 .tenth-card {
     background-color: rgba(128, 56, 205, 0.1);
     border: 2px solid rgba(128, 56, 205, 0.1);
     color: #8038cd;
-}
-.tenth-card:hover {
-    box-shadow: 0 0 15px rgba(128, 56, 205, 0.3);
 }
 .specialties__grid-link {
     white-space: wrap;
@@ -687,7 +658,7 @@ main {
 }
 .specialties__id p {
     font-weight: 600;
-    font-size: 24px;
+    font-size: clamp(20px, 1.8vw, 24px);
     color: var(--color-black);
 }
 .specialties__icon {
@@ -700,22 +671,60 @@ main {
     border-radius: var(--border-radius-100);
     flex-shrink: 0;
 }
+.specialties__icon svg {
+    display: flex;
+}
 .specialties__card-subtitle {
     max-width: 566px;
     padding-top: 10px;
     font-weight: 600;
-    font-size: 24px;
+    font-size: clamp(18px, 1.8vw, 24px);
     line-height: 120%;
 }
 .specialties__card-description {
     padding-top: 15px;
-    font-size: 20px;
+    font-size: clamp(16px, 1.5vw, 20px);
     color: rgba(0, 0, 0, 0.5);
     line-height: 120%;
 }
 
 /* media */
 
+@media(hover: hover) {
+    .specialties__grid-item:hover {
+        transform: scale(1.05);
+    }
+    .first-card:hover {
+        box-shadow: 0 0 15px rgba(81, 205, 56, 0.3);
+    }
+    .second-card:hover {
+        box-shadow: 0 0 15px rgba(56, 195, 205, 0.3);
+    }
+    .third-card:hover {
+        box-shadow: 0 0 15px rgba(56, 205, 170, 0.3);
+    }
+    .fourth-card:hover {
+        box-shadow: 0 0 15px rgba(205, 200, 56, 0.3);
+    }
+    .fifth-card:hover {
+        box-shadow: 0 0 15px rgba(56, 122, 205, 0.3);
+    }
+    .sixth-card:hover {
+        box-shadow: 0 0 15px rgba(249, 173, 50, 0.3);
+    }
+    .seventh-card:hover {
+        box-shadow: 0 0 15px rgba(56, 63, 205, 0.3);
+    }
+    .eighth-card:hover {
+        box-shadow: 0 0 15px rgba(99, 105, 147, 0.3);
+    }
+    .ninth-card:hover {
+        box-shadow: 0 0 15px rgba(205, 56, 56, 0.3);
+    }
+    .tenth-card:hover {
+        box-shadow: 0 0 15px rgba(128, 56, 205, 0.3);
+    }
+}
 @media(max-width: 1260px) {
     .contacts {
         align-items: normal;
@@ -774,6 +783,14 @@ main {
     }
     .header__button {
         margin-left: auto;
+    }
+    .specialties__icon {
+        width: 55px;
+        height: 55px;
+    }
+    .specialties__icon svg {
+        width: 30px;
+        height: 30px;
     } 
 }
 @media(max-width: 900px) {
@@ -805,6 +822,13 @@ main {
     .header__burger {
         display: flex;
     }
+    .specialties__grid-list {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .specialties__grid-item {
+        max-width: 100%;
+    }
 }
 @media(max-width: 676px) {
     .contacts__map div {
@@ -826,5 +850,8 @@ main {
     }
     .info-description {
         text-align: start;
+    }
+    .specialties__card {
+        padding: 20px;
     }
 }
