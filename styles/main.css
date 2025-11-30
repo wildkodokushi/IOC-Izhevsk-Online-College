@@ -75,6 +75,7 @@ body {
     transition: var(--transition-duration);
     font-family: var(--font-family);
     font-size: clamp(18px, 1.55vw, 21px);
+    font-weight: 400;
     cursor: var(--cursor-light);
 }
 a, button {
@@ -412,7 +413,6 @@ main {
 }
 .info__soc1al-text-regular:last-child {
     color: var(--color-light-gray);
-    font-weight: 400;
     font-size: clamp(18px, 1.80vw, 22px);
 }
 .info__soc1al-button {
@@ -556,6 +556,84 @@ main {
     width: 100%;
     height: 100%;
 }
+
+/* specialties */
+
+.specialties {
+    margin-top: 30px;
+}
+.specialties__title {
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+}
+.specialties__inner {
+    padding-top: 40px;
+}
+.specialties__grid {
+}
+.specialties__grid-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+.specialties__grid-item {
+    max-width: 650px;
+}
+.first-card {
+    border: 2px solid rgba(81, 205, 56, 0.1);
+    border-radius: var(--border-radius-23);
+    background: rgba(81, 205, 56, 0.1);
+    color: #51cd38;
+}
+.specialties__grid-link {
+    white-space: wrap;
+}
+.specialties__card {
+    padding-inline: 40px;
+    padding-block: 30px;
+}
+.specialties__card-id {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.specialties__id {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding-inline: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius-30);
+}
+.specialties__id p {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--color-black);
+}
+.specialties__icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius-100);
+}
+.specialties__card-subtitle {
+    max-width: 566px;
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+}
+.specialties__card-description {
+    padding-top: 15px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 120%;
+}
+
 
 /* media */
 
