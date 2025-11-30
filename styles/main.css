@@ -16,11 +16,11 @@
 
     --box-shadow-header: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
     --box-shadow-footer: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
-    /* --box-shadow-block: 0px 0px 8px 0px rgba(34, 60, 80, 0.5) inset; */
 
     --background-color-white: #efefef;
     --background-color-light: #fff;
-    --background-color-accent: #357ed6; 
+    --background-color-accent: #357ed6;
+    --background-color-in-ellips: rgba(255, 255, 255, 0.3);
 
     --color-black: #202020;
     --color-white: #fff;
@@ -41,6 +41,7 @@
     
     --background-color-white: #282828;
     --background-color-light: #303030;
+    --background-color-in-ellips: rgba(0, 0, 0, 0.3);
     
     --color-light-gray: rgba(255, 255, 255, 0.4);
     --color-black: #fff;
@@ -155,12 +156,13 @@ main {
 .overlay__button {
     height: 50px;
     border: 1px solid var(--color-black);
+    color: var(--color-black);
     border-radius: var(--border-radius-30);
 }
 .header__button:hover,
 .overlay__button:hover {
     border: var(--border-none);
-    color: var(--background-color-white);
+    color: var(--color-white);
     background-color: var(--background-color-accent);
 }
 /* header-theme */
@@ -680,7 +682,7 @@ main {
     align-items: center;
     height: 40px;
     padding-inline: 20px;
-    background: rgba(255, 255, 255, 0.3);
+    background-color: var(--background-color-in-ellips);
     border-radius: var(--border-radius-30);
 }
 .specialties__id p {
@@ -694,7 +696,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--background-color-in-ellips);
     border-radius: var(--border-radius-100);
     flex-shrink: 0;
 }
