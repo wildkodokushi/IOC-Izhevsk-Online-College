@@ -500,20 +500,7 @@ main {
 
 /* footer */
 
-.footer {
-    width: 100%;
-    box-shadow: var(--box-shadow-footer);
-    background-color: var(--background-color-white);
-    display: inline-flex;
-    align-items: center;
-    height: 100px;
-    margin-top: 100px;
-}
-.footer__row {
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
-}
+
 
 /* contacts */
 
