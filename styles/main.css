@@ -281,7 +281,7 @@ main {
 .info__row {
     display: flex;
     justify-content: space-between;
-    column-gap: 10px;
+    gap: clamp(10px, 2.6vw, 50px);
 }
 
 /* swiper */
@@ -361,7 +361,7 @@ main {
 .info__details {
     display: flex;
     flex-direction: column;
-    row-gap: clamp(10px, 2.6vw, 50px);
+    gap: clamp(10px, 2.6vw, 50px);
 }
 .info__details-list,
 .contacts__list {
@@ -390,15 +390,19 @@ main {
     white-space: nowrap;
 }
 .info__soc1al {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 12px;
+    display: block;
+    align-content: center;
     padding: 25px 29px;
     background-color: var(--background-color-light);
     border-radius: var(--border-radius-15);
     max-height: 110px;
     box-shadow: var(--box-shadow-block);
+}
+.info__soc1al-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
 }
 .info__soc1al-text {
     display: flex;
@@ -743,21 +747,26 @@ main {
 @media(max-width: 1180px) {
     .info__row {
         flex-wrap: wrap;
-        row-gap: 30px;
     }
     .info__container {
         row-gap: 30px;
     }
-    .info__details,
+    .info__details {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .info__soc1al {
+        max-height: 100%;
+    }
     .info__swiper,
     .swiper__info-container {
         width: 100%;
     }
     .info__details-item, 
     .info__details-item .span-column {
-        flex-direction: row;
-        justify-content: center;
         flex-wrap: wrap;
+        flex-direction: row;
     }
 }
 @media(max-width: 1086px) {
@@ -804,6 +813,25 @@ main {
         height: 35px;
     }
 }
+@media(max-width: 800px) {
+    .info__details {
+        flex-wrap: wrap;
+    }
+    .info__soc1al,
+    .info__details-list {
+        max-width: 100%;
+        width: 100%;
+        padding: 25px 0;
+    }
+    .info__details-item, 
+    .info__details-item .span-column {
+        text-align: center;
+        flex-direction: column;
+    }
+    .info__details-list p {
+        text-indent: 0;
+    }
+}
 @media(max-width: 767px) {
     .header {
         height: auto;
@@ -816,7 +844,8 @@ main {
     .header__row {
         column-gap: 20px;
     }
-    .header__menu-list, .header__button {
+    .header__menu-list, 
+    .header__button {
         display: none;
     }
     .header__burger {
