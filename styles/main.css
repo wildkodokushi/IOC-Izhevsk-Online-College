@@ -449,7 +449,6 @@ main {
     background-color: var(--background-color-light);
     padding-block: 50px;
     margin-top: 130px;
-    height: 100%;
 }
 .advantages__inner {
     display: flex;
@@ -753,7 +752,7 @@ main {
 .specialties__card-description {
     padding-top: 15px;
     font-size: clamp(16px, 1.5vw, 20px);
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--color-light-gray);
     line-height: 120%;
 }
 
