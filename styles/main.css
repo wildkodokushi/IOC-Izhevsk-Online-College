@@ -86,11 +86,14 @@ a, button {
     color: inherit;
     transition: var(--transition-duration);
     text-underline-position: under;
+    font-size: inherit;
+    font-family: inherit;
 }
 .button {
     display: inline-flex;
     align-items: center;
     padding-inline: 55px;
+    background-color: transparent;
 }
 .container {
     max-width: var(--container-width);
@@ -262,7 +265,7 @@ main {
 
 .info,
 .contacts {
-    margin-top: 30px;
+    padding-top: 30px;
 }
 .info__title,
 .contacts__tittle {
@@ -446,6 +449,7 @@ main {
     background-color: var(--background-color-light);
     padding-block: 50px;
     margin-top: 130px;
+    height: 100%;
 }
 .advantages__inner {
     display: flex;
@@ -500,6 +504,80 @@ main {
 
 /* footer */
 
+.footer {
+    margin-top: 100px;
+    box-shadow: var(--box-shadow-footer);
+}
+.footer__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+    padding-block: 30px;
+}
+.footer__body-contacts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.footer__targetAction {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.footer__targetAction-name {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.footer__targetAction-name p {
+    text-wrap: nowrap;
+    font-size: 24px;
+    line-height: 120%;
+}
+.footer__button {
+    height: 50px;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: var(--border-radius-30);
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+}
+.footer__button:hover {
+    border: var(--border-none);
+    color: var(--color-white);
+    background-color: var(--background-color-accent);
+}
+.footer__menu {
+    display: flex;
+    justify-content: space-between;
+}
+.footer__menu-navigations {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.allocated p {
+    font-weight: 600;
+    font-size: 32px;
+}
+.footer__menu-link {
+    font-size: 24px;
+    line-height: 150%;
+    transition: var(--transition-duration);
+}
+.footer__menu-link:hover {
+    color: var(--color-accent);
+}
+.footer__menu-item:nth-child(2) {
+    padding-top: 5px;
+}
+.footer__body-copyright p {
+    font-size: 24px;
+}
 
 
 /* contacts */
