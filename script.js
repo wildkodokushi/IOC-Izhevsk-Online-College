@@ -112,4 +112,3 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.custom-button-prev',
     }
 });
-

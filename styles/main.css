@@ -1,7 +1,7 @@
 @import url(./fonts.css);
 @import url(./reset.css);
-/* veriables */
 
+/* veriables */
 :root {
     --font-family: "Montserrat", sans-serif;
 
@@ -71,7 +71,7 @@
 }
 body {
     line-height: 1;
-    background-color: var(--background-color-white);
+    background-color: var(--background-color-light);
     color: var(--color-black);
     transition: var(--transition-duration);
     font-family: var(--font-family);
@@ -105,7 +105,42 @@ b {
     font-weight: 700;
 }
 main {
+    position: relative;
     min-height: 60vw;
+}
+
+/* position-link */
+
+.test-link {
+    position: fixed;
+    display: inline-flex;
+    align-items: center;
+    height: 60px;
+    background-color: var(--background-color-accent);
+    color: var(--color-white);
+    padding-inline: 20px;
+    border-radius: var(--border-radius-30);
+    margin: 30px;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    border: 2px solid transparent;
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0% {
+        border-color: transparent;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        border-color: transparent;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
 
 /* header */
@@ -266,6 +301,8 @@ main {
 .info,
 .contacts {
     padding-top: 30px;
+    background-color: var(--background-color-white);
+    padding-bottom: 65px;
 }
 .info__title,
 .contacts__tittle {
@@ -448,7 +485,7 @@ main {
 .advantages {
     background-color: var(--background-color-light);
     padding-block: 50px;
-    margin-top: 130px;
+    margin-top: 65px;
 }
 .advantages__inner {
     display: flex;
@@ -506,6 +543,7 @@ main {
 .footer {
     margin-top: 100px;
     box-shadow: var(--box-shadow-footer);
+    background-color: var(--background-color-white);
 }
 .footer__body {
     display: flex;
@@ -766,37 +804,8 @@ main {
 
 @media(hover: hover) {
     .specialties__grid-item:hover {
-        transform: scale(1.05);
-    }
-    .first-card:hover {
-        box-shadow: 0 0 15px rgba(81, 205, 56, 0.3);
-    }
-    .second-card:hover {
-        box-shadow: 0 0 15px rgba(56, 195, 205, 0.3);
-    }
-    .third-card:hover {
-        box-shadow: 0 0 15px rgba(56, 205, 170, 0.3);
-    }
-    .fourth-card:hover {
-        box-shadow: 0 0 15px rgba(205, 200, 56, 0.3);
-    }
-    .fifth-card:hover {
-        box-shadow: 0 0 15px rgba(56, 122, 205, 0.3);
-    }
-    .sixth-card:hover {
-        box-shadow: 0 0 15px rgba(249, 173, 50, 0.3);
-    }
-    .seventh-card:hover {
-        box-shadow: 0 0 15px rgba(56, 63, 205, 0.3);
-    }
-    .eighth-card:hover {
-        box-shadow: 0 0 15px rgba(99, 105, 147, 0.3);
-    }
-    .ninth-card:hover {
-        box-shadow: 0 0 15px rgba(205, 56, 56, 0.3);
-    }
-    .tenth-card:hover {
-        box-shadow: 0 0 15px rgba(128, 56, 205, 0.3);
+        transform: scale(1.02);
+        box-shadow: 0 0 15px currentColor;
     }
 }
 @media(max-width: 1260px) {
