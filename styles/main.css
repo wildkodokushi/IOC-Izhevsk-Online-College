@@ -115,11 +115,12 @@ main {
     position: fixed;
     display: inline-flex;
     align-items: center;
-    height: 60px;
+    height: 30px;
     background-color: var(--background-color-accent);
     color: var(--color-white);
-    padding-inline: 20px;
+    padding-inline: 10px;
     border-radius: var(--border-radius-30);
+    font-size: 16px;
     margin: 30px;
     right: 0;
     bottom: 0;
@@ -166,6 +167,12 @@ main {
 }
 .header__logo {
     z-index: 102;
+}
+.logo__ellips {
+    fill: var(--background-color-light);
+}
+.logo__path {
+    fill: var(--color-black);
 }
 .header__logo--2 {
     display: none;
@@ -916,7 +923,7 @@ main {
         height: auto;
         padding: 5px 0 5px 0;
     }
-    .header__logo img {
+    .logo {
         width: 65px;
         height: 65px;
     }
