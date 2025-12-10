@@ -807,6 +807,100 @@ main {
     line-height: 120%;
 }
 
+/* apply */
+
+.apply {
+    line-height: 200%;
+}
+.apply__inner {
+    background-color: var(--background-color-white);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.apply__title {
+    padding-inline: var(--padd-x);
+    text-align: center;
+    font-weight: 800;
+    line-height: 125%;
+    font-size: clamp(24px, 4.44vw, 40px);
+}
+.apply__form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.form__subtitle-where {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: right;
+    line-height: 120%;
+}
+.d-flex {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+label {
+    font-weight: 500;
+}
+input, select {
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid #202020;
+    border-radius: var(--border-radius-10);
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 10px;
+    max-width: 350px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+}
+.form__statement,
+.form__aboutus,
+.form__applications {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.form__subtitle {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+.d-column {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.passport-details__list {
+    width: 100%;
+}
+.passport-details__list input[type="number"] {
+    max-width: 85px;
+}
+.applications__list {
+    list-style-type: decimal;
+    padding-left: var(--padd-x);
+}
+.applications__item {
+}
+.form__button {
+    padding: 0;
+}
+.button {
+}
+
+
 /* media */
 
 @media(hover: hover) {
