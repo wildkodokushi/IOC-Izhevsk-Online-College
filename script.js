@@ -2,7 +2,6 @@ window.addEventListener('beforeunload', function() {
     socket.close();
 });
 
-//header-burger, overlaygit 
 const themeToggle = document.getElementById('themeToggle');
 const burger = document.getElementById('burger');
 const overlay = document.getElementById('overlay');
@@ -93,7 +92,6 @@ function updateMapTheme(isDark) {
     mapIframe.src = url.toString();
 }
 
-//swiper
 const swiper = new Swiper('.swiper', {
     autoplay: {
         delay: 3000,
