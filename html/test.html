@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профориентационный тест</title>
+    <title>Профориентационный тест - Найдите свою специальность</title>
     <link rel="shortcut icon" href="../icon/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <script src="../script.js"></script>
+    <header class="header__test">
+        <div class="header__test-inner container">
+            <h1 class="test-title main__title">Тест на профориентацию</h1>
+            <p class="test-subtitle">Ответьте на 10 вопросов, чтобы узнать, какая специальность вам подходит больше всего</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Вопрос 1 из 10</div>
+        </div>
+    </header>
+    <main>
+        <section class="test__content">
+            <div class="test__content-inner container">
+                <div class="question-card" id="questionCard">
+                    <h2 class="question-text" id="questionText"></h2>
+                    <div class="options-container" id="optionsContainer"></div>
+                </div>
+                <div class="result-card" id="resultCard" style="display: none;">
+                    <h2 class="result-title">Ваш результат</h2>
+                    <div class="specialty-match" id="specialtyMatch"></div>
+                    <div class="specialties-container" id="specialtiesContainer"></div>
+                    <button class="button retry-btn" id="retryBtn">Пройти тест снова</button>
+                </div>
+                <div class="navigation">
+                    <button class="button prev-btn" id="prevBtn" disabled>Назад</button>
+                    <button class="button next-btn" id="nextBtn">Далее</button>
+                    <button class="button submit-btn" id="submitBtn" style="display: none;">Узнать результат</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="test.js"></script>
 </body>
 </html>
