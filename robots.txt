@@ -1,2 +1,4 @@
 User-agent: *
 
+Host: wildkodokushi.github.io
+Sitemap: https://wildkodokushi.github.io/sitemap.xml
