@@ -270,9 +270,9 @@ function showResults() {
     const topSpecialty = specialties[topSpecialtyCode];
     
     specialtyMatch.innerHTML = `
-        <div>🎯 Ваша наиболее подходящая специальность:</div>
-        <div style="margin-top: 10px; font-size: 1.5rem;">${topSpecialty.name}</div>
-        <div style="font-size: 1rem; margin-top: 10px; color: #4b5563;">${topSpecialty.description}</div>
+        <div>Ваша наиболее подходящая специальность:</div>
+        <div class="main__title" style="margin-top: 10px;">${topSpecialty.name}</div>
+        <p style="margin-top: 10px; color: var(--color-black);">${topSpecialty.description}</p>
     `;
     
     specialtiesContainer.innerHTML = '';
