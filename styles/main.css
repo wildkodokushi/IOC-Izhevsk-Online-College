@@ -121,41 +121,6 @@ main {
     min-height: 60vw;
 }
 
-/* position-link */
-
-.test-link {
-    position: fixed;
-    display: inline-flex;
-    align-items: center;
-    height: 30px;
-    background-color: var(--background-color-accent);
-    color: var(--color-white);
-    padding-inline: 10px;
-    border-radius: var(--border-radius-30);
-    font-size: 16px;
-    margin: 30px;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    border: 2px solid transparent;
-    animation: pulse-border 2s infinite;
-}
-
-@keyframes pulse-border {
-    0% {
-        border-color: transparent;
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    }
-    50% {
-        border-color: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-    }
-    100% {
-        border-color: transparent;
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
-}
-
 /* header */
 
 .header {
