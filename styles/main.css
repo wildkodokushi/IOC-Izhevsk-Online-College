@@ -434,16 +434,18 @@ main {
     color: var(--color-light-gray);
     font-size: clamp(18px, 1.80vw, 22px);
 }
-.info__soc1al-button {
+.info__soc1al-button,
+.recommendation__link {
     height: 47px;
     background-color: var(--background-color-accent);
     border-radius: var(--border-radius-23);
     color: var(--color-white);
     transition: var(--transition-duration);
 }
-.info__soc1al-button:hover {
+.info__soc1al-button:hover,
+.recommendation__link:hover {
     background-color: transparent;
-    border: 1px solid var(--background-color-accent);
+    outline: 1px solid var(--background-color-accent);
     color: var(--color-black);
 }
 .info-description {
@@ -519,15 +521,6 @@ main {
 }
 .recommendation__link {
     margin-top: 20px;
-    background-color: var(--background-color-accent);
-    height: 40px;
-    color: var(--color-white);
-    border-radius: var(--border-radius-30);
-}
-.recommendation__link:hover {
-    background-color: transparent;
-    color: var(--color-black);
-    border: 1px solid var(--color-black);
 }
 
 /* footer */
