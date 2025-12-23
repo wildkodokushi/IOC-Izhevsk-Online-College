@@ -1072,6 +1072,33 @@ input[type="radio"] {
     border-color: #10b981 !important;
 }
 
+/* 404 page */
+.error__inner,
+.error {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    row-gap: 10px;
+    line-height: 1.2;
+}
+.error__title {
+    font-size: 20vw;
+    font-weight: 900;
+    color: var(--color-accent);
+}
+.error__desc {
+    font-weight: 600;
+}
+.error__link {
+    color: var(--color-accent);
+    margin-top: 5px;
+}
+
+
 /* media */
 
 @media(hover: hover) {
