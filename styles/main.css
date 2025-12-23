@@ -74,7 +74,7 @@
 }
 body {
     line-height: 1;
-    background-color: var(--background-color-light);
+    background-color: var(--background-color-white);
     color: var(--color-black);
     transition: var(--transition-duration);
     font-family: var(--font-family);
@@ -118,7 +118,7 @@ b {
 }
 main {
     position: relative;
-    min-height: 60vw;
+    min-height: 50vw;
 }
 
 /* header */
@@ -282,10 +282,6 @@ main {
 
 /* section 1 - info */
 
-.info,
-.contacts {
-    background-color: var(--background-color-white);
-}
 .info__container {
     display: flex;
     flex-direction: column;
@@ -457,6 +453,9 @@ main {
 
 /* section-2 advantages */
 
+.advantages {
+    background-color: var(--background-color-light);
+}
 .advantages__inner {
     display: flex;
     flex-direction: column;
@@ -504,10 +503,6 @@ main {
 
 /* recommendation */
 
-.recommendation {
-    width: 100%;
-    background-color: var(--background-color-white);
-}
 .recommendation__card {
     display: flex;
     flex-direction: column;
@@ -603,9 +598,6 @@ main {
 
 /* contacts */
 
-.contacts__main {
-    min-height: auto;
-}
 .contacts__inner {
     padding-block: 50px;
 }
@@ -780,7 +772,6 @@ main {
     line-height: 200%;
 }
 .apply__inner {
-    background-color: var(--background-color-white);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
 .apply__form {
@@ -893,7 +884,7 @@ input[type="radio"] {
 .progress-bar {
     margin-top: 20px;
     height: 8px;
-    background-color: var(--background-color-white);
+    background-color: var(--background-color-light);
     border-radius: 4px;
     margin-bottom: 15px;
     overflow: hidden;
@@ -1073,6 +1064,7 @@ input[type="radio"] {
 }
 
 /* 404 page */
+
 .error__inner,
 .error {
     height: 100%;
