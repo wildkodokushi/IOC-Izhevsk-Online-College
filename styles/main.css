@@ -446,7 +446,7 @@ main {
 }
 .info-description {
     font-weight: 100;
-    font-size: clamp(18px, 3.55vw, 32px);
+    font-size: clamp(18px, 1.87vw, 25px);
     text-align: justify;
     line-height: 150%;
 }
