@@ -445,7 +445,7 @@ main {
     color: var(--color-black);
 }
 .info-description {
-    font-weight: 100;
+    font-weight: 300;
     font-size: clamp(18px, 1.87vw, 25px);
     text-align: justify;
     line-height: 150%;
