@@ -1,3 +1,4 @@
+// Данные специальностей
 const specialties = {
     '09.01.03': {
         name: 'Оператор информационных систем и ресурсов',
@@ -50,6 +51,8 @@ const specialties = {
         tags: ['право', 'законодательство', 'юридические услуги', 'документы']
     }
 };
+
+// Вопросы теста
 const questions = [
     {
         text: "Что вам больше нравится делать?",
@@ -142,9 +145,13 @@ const questions = [
         ]
     }
 ];
+
+// Переменные состояния теста
 let currentQuestion = 0;
 let answers = [];
 let userTags = {};
+
+// Получаем элементы DOM
 const questionText = document.getElementById('questionText');
 const optionsContainer = document.getElementById('optionsContainer');
 const progressFill = document.getElementById('progressFill');
@@ -156,15 +163,86 @@ const questionCard = document.getElementById('questionCard');
 const resultCard = document.getElementById('resultCard');
 const specialtyMatch = document.getElementById('specialtyMatch');
 const specialtiesContainer = document.getElementById('specialtiesContainer');
-const retryBtn = document.getElementById('retryBtn');
+
+// Получаем новые элементы навигации
+const testNavigation = document.getElementById('testNavigation');
+const resultNavigation = document.getElementById('resultNavigation');
+const clearResultsBtn = document.getElementById('clearResultsBtn');
+const gotoSpecialtiesBtn = document.getElementById('gotoSpecialtiesBtn');
+
+// =========== Ключ для локального хранилища ===========
+const STORAGE_KEY = 'profTestResults_v1';
+
+// =========== Функции для работы с локальным хранилищем ===========
+function saveResultsToStorage() {
+    const results = {
+        answers: answers,
+        userTags: userTags,
+        timestamp: new Date().getTime()
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(results));
+}
+
+function loadResultsFromStorage() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+        try {
+            const results = JSON.parse(saved);
+            // Проверяем, не устарели ли результаты (например, старше 7 дней)
+            const now = new Date().getTime();
+            const daysDiff = (now - results.timestamp) / (1000 * 60 * 60 * 24);
+            
+            if (daysDiff < 7) { // Результаты актуальны в течение 7 дней
+                return results;
+            } else {
+                clearStorage(); // Удаляем устаревшие данные
+            }
+        } catch (e) {
+            console.error('Ошибка при чтении сохраненных результатов:', e);
+        }
+    }
+    return null;
+}
+
+function clearStorage() {
+    localStorage.removeItem(STORAGE_KEY);
+}
+
 function initTest() {
-    answers = Array(questions.length).fill(null);
-    userTags = {};
-    currentQuestion = 0;
+    const savedResults = loadResultsFromStorage();
+    
+    if (savedResults) {
+        // Если есть сохраненные результаты, показываем их
+        answers = savedResults.answers;
+        userTags = savedResults.userTags;
+        
+        // Проверяем, завершен ли тест (все вопросы отвечены)
+        const isTestComplete = !answers.includes(null) && answers.length === questions.length;
+        
+        if (isTestComplete) {
+            showResults();
+            return;
+        } else {
+            // Если тест не завершен, продолжаем с того места, где остановились
+            currentQuestion = answers.findIndex(answer => answer === null);
+            if (currentQuestion === -1) currentQuestion = 0;
+        }
+    } else {
+        // Нет сохраненных результатов - начинаем с начала
+        answers = Array(questions.length).fill(null);
+        userTags = {};
+        currentQuestion = 0;
+    }
+    
+    // Показываем навигацию теста, скрываем навигацию результатов
+    testNavigation.style.display = 'flex';
+    resultNavigation.style.display = 'none';
+    
     updateQuestion();
     updateProgress();
     updateNavigation();
 }
+
 function updateQuestion() {
     const question = questions[currentQuestion];
     
@@ -186,6 +264,7 @@ function updateQuestion() {
         optionsContainer.appendChild(optionElement);
     });
 }
+
 function selectOption(index) {
     answers[currentQuestion] = index;
     
@@ -194,14 +273,19 @@ function selectOption(index) {
         userTags[tag] = (userTags[tag] || 0) + 1;
     });
     
+    // Автосохранение при каждом ответе
+    saveResultsToStorage();
+    
     updateQuestion();
     updateNavigation();
 }
+
 function updateProgress() {
     const progress = ((currentQuestion + 1) / questions.length) * 100;
     progressFill.style.width = `${progress}%`;
     progressText.textContent = `Вопрос ${currentQuestion + 1} из ${questions.length}`;
 }
+
 function updateNavigation() {
     prevBtn.disabled = currentQuestion === 0;
     
@@ -221,6 +305,7 @@ function updateNavigation() {
         submitBtn.disabled = false;
     }
 }
+
 nextBtn.addEventListener('click', () => {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -229,6 +314,7 @@ nextBtn.addEventListener('click', () => {
         updateNavigation();
     }
 });
+
 prevBtn.addEventListener('click', () => {
     if (currentQuestion > 0) {
         currentQuestion--;
@@ -237,6 +323,7 @@ prevBtn.addEventListener('click', () => {
         updateNavigation();
     }
 });
+
 function calculateResults() {
     const specialtyScores = {};
     
@@ -244,10 +331,9 @@ function calculateResults() {
         let score = 0;
         const specialty = specialties[code];
         
-
         specialty.tags.forEach(tag => {
             if (userTags[tag]) {
-                score += userTags[tag] * 10
+                score += userTags[tag] * 10;
             }
         });
         
@@ -258,8 +344,9 @@ function calculateResults() {
         return specialtyScores[b] - specialtyScores[a];
     });
     
-    return sortedSpecialties.slice(0, 3)
+    return sortedSpecialties.slice(0, 3);
 }
+
 function showResults() {
     const topSpecialties = calculateResults();
     
@@ -292,7 +379,15 @@ function showResults() {
         
         specialtiesContainer.appendChild(specialtyElement);
     });
+    
+    // Переключаем навигацию: скрываем тестовую, показываем результативную
+    testNavigation.style.display = 'none';
+    resultNavigation.style.display = 'flex';
+    
+    // Сохраняем результаты при показе
+    saveResultsToStorage();
 }
+
 submitBtn.addEventListener('click', () => {
     if (answers.includes(null)) {
         alert('Пожалуйста, ответьте на все вопросы перед завершением теста.');
@@ -301,9 +396,77 @@ submitBtn.addEventListener('click', () => {
     
     showResults();
 });
-retryBtn.addEventListener('click', () => {
-    resultCard.style.display = 'none';
-    questionCard.style.display = 'block';
-    initTest();
+
+// Обработчик для кнопки "Очистить результаты"
+clearResultsBtn.addEventListener('click', () => {
+    if (confirm('Вы уверены, что хотите очистить результаты теста и начать заново?')) {
+        clearStorage();
+        
+        // Сбрасываем состояние
+        answers = Array(questions.length).fill(null);
+        userTags = {};
+        currentQuestion = 0;
+        
+        // Возвращаемся к тесту
+        resultCard.style.display = 'none';
+        questionCard.style.display = 'block';
+        
+        // Переключаем навигацию обратно к тестовой
+        resultNavigation.style.display = 'none';
+        testNavigation.style.display = 'flex';
+        
+        // Обновляем состояние
+        updateQuestion();
+        updateProgress();
+        updateNavigation();
+    }
 });
+
+// Сохраняем прогресс при уходе со страницы
+window.addEventListener('beforeunload', () => {
+    if (answers.length > 0) {
+        saveResultsToStorage();
+    }
+});
+
+// Запуск теста при загрузке страницы
 document.addEventListener('DOMContentLoaded', initTest);
+
+// Функция для сохранения выбранной специальности в форме
+document.addEventListener('DOMContentLoaded', function() {
+    const specialtiesSelect = document.getElementById('specialties');
+    if (specialtiesSelect) {
+        // Загружаем результаты теста
+        const savedResults = loadResultsFromStorage();
+        
+        // Если тест пройден и есть рекомендации
+        if (savedResults && savedResults.answers && !savedResults.answers.includes(null)) {
+            const topSpecialties = calculateResults();
+            if (topSpecialties && topSpecialties[0]) {
+                // Устанавливаем рекомендуемую специальность по умолчанию
+                specialtiesSelect.value = topSpecialties[0];
+                
+                // Показываем сообщение о рекомендации
+                const recommendationNote = document.createElement('div');
+                recommendationNote.className = 'recommendation-note';
+                recommendationNote.style.marginTop = '10px';
+                recommendationNote.style.padding = '10px';
+                recommendationNote.style.backgroundColor = '#f0f9ff';
+                recommendationNote.style.borderRadius = '5px';
+                recommendationNote.style.fontSize = '14px';
+                recommendationNote.innerHTML = `
+                    <strong>Рекомендация:</strong> На основе результатов теста вам подходит специальность 
+                    "<strong>${specialties[topSpecialties[0]].name}</strong>". Она была выбрана автоматически.
+                `;
+                
+                // Вставляем сообщение после селекта
+                specialtiesSelect.parentNode.insertBefore(recommendationNote, specialtiesSelect.nextSibling);
+            }
+        }
+        
+        // Сохраняем выбор при изменении
+        specialtiesSelect.addEventListener('change', function() {
+            localStorage.setItem('selectedSpecialty', this.value);
+        });
+    }
+});
