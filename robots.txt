@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Host: wildkodokushi.github.io
-Sitemap: https://wildkodokushi.github.io/IOC-Izhevsk-Online-College/sitemap.xml
+Sitemap: https://ioc-izhevsk-online-college.vercel.app/sitemap.xml
