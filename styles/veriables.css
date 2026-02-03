@@ -1,0 +1,48 @@
+/* veriables */
+:root {
+    --font-family: "Montserrat", sans-serif;
+
+    --border-radius-100: 100%;
+    --border-radius-30: 30px;
+    --border-radius-23: 23px;
+    --border-radius-15: 15px;
+    --border-radius-10: 10px;
+    --border-radius-5: 5px;
+    --border-none: none;
+    --border-details: 0.50px solid rgba(0, 0, 0, 0.1); 
+
+    --box-shadow-header: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+    --box-shadow-footer: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
+
+    --background-color-white: #efefef;
+    --background-color-light: #fff;
+    --background-color-accent: #357ed6;
+    --background-color-in-ellips: rgba(255, 255, 255, 0.3);
+
+    --color-black: #202020;
+    --color-white: #fff;
+    --color-accent: #387ACD; 
+    --color-light-gray: rgba(0, 0, 0, 0.6);
+
+    --transition-duration: 0.3s;
+
+    --padd-x: clamp(10px, 2.22vw, 30px);
+
+    --container-width: 1350px;
+
+    --cursor-light: url(../icon/cursor/light/pointer.cur), auto;
+    --cursor-light-pointer: url(../icon/cursor/light/link.cur), auto;
+}
+.dark-theme {
+    --border-details: 0.50px solid rgba(255, 255, 255, 0.1); 
+    
+    --background-color-white: #282828;
+    --background-color-light: #303030;
+    --background-color-in-ellips: rgba(0, 0, 0, 0.3);
+    
+    --color-light-gray: rgba(255, 255, 255, 0.4);
+    --color-black: #fff;
+
+    --cursor-light: url(../icon/cursor/dark/pointer.cur), auto;
+    --cursor-light-pointer: url(../icon/cursor/dark/link.cur), auto;
+}
