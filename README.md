@@ -7,9 +7,8 @@
 
 <p align="center">
   <img src="screenshots/IOC-main-page-mobile.png" alt="Главная страница — мобильная версия" width="300">
+  <img src="screenshots/IOC-main-page-mobile-dark.png" alt="Главная страница — мобильная версия" width="300">
 </p>
-
----
 
 ## О проекте
 
@@ -46,7 +45,7 @@
 |:-----------:|:-------------:|:--------------:|:---:|
 | **97** | **92** | **100** | **100** |
 
-![Результаты Lighthouse](screenshots/lighthouse.png)
+![Результаты Lighthouse](screenshots/Lighthouse.png)
 
 ## Стек
 
